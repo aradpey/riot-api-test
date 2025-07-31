@@ -8,8 +8,6 @@ const RIOT_API_KEY = process.env.RIOT_API_KEY;
 // Define the base URLs for different Riot API endpoints
 // Americas region is used for account and match endpoints (global)
 const RIOT_API_BASE = "https://americas.api.riotgames.com";
-// NA1 region is used for summoner endpoints (if needed later)
-const LOL_API_BASE = "https://na1.api.riotgames.com";
 
 // Helper function to format game duration in MM:SS format
 const formatGameDuration = (seconds: number) => {

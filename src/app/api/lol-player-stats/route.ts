@@ -32,28 +32,6 @@ const fetchWithRetry = async (
 const RIOT_API_BASE = "https://americas.api.riotgames.com";
 const LOL_API_BASE = "https://na1.api.riotgames.com";
 
-// Helper function to get human-readable game mode name
-const getGameModeName = (queueId: number, gameMode: string) => {
-  const queueMap: { [key: number]: string } = {
-    400: "Normal Draft",
-    420: "Ranked Solo/Duo",
-    430: "Normal Blind",
-    440: "Ranked Flex",
-    450: "ARAM",
-    700: "Clash",
-    900: "URF",
-    1020: "One for All",
-    1300: "Nexus Blitz",
-    1400: "Ultimate Spellbook",
-    1700: "Arena",
-    1900: "URF",
-    2000: "Tutorial 1",
-    2010: "Tutorial 2",
-    2020: "Tutorial 3",
-  };
-  return queueMap[queueId] || gameMode;
-};
-
 // Main handler for POST requests to this API route
 export async function POST(req: NextRequest) {
   // Parse the JSON body from the request to get gameName and tagLine

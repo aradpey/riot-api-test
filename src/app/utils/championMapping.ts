@@ -36,12 +36,14 @@ export async function fetchChampionData(): Promise<{
     // Convert champion data to mapping format
     const championMapping: { [key: string]: ChampionData } = {};
 
-    Object.values(data.data).forEach((champion: any) => {
-      championMapping[champion.key] = {
-        id: champion.id,
-        name: champion.name,
-        title: champion.title,
-        image: champion.image,
+    Object.values(data.data).forEach((champion: unknown) => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const champ = champion as any;
+      championMapping[champ.key] = {
+        id: champ.id,
+        name: champ.name,
+        title: champ.title,
+        image: champ.image,
       };
     });
 

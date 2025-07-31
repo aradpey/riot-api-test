@@ -4,8 +4,6 @@
 import React, { useState, useEffect } from "react";
 // Import Next.js Link component
 import Link from "next/link";
-// Import champion mapping utilities
-import { getChampionName, getChampionImageUrl } from "./utils/championMapping";
 
 // Type definitions for better type safety
 interface Player {
@@ -861,10 +859,6 @@ export default function Home() {
                     const championName =
                       championData[champ.championId.toString()] ||
                       `Champion ${champ.championId}`;
-                    const championImageUrl = `https://ddragon.leagueoflegends.com/cdn/14.15.1/img/champion/${championName.replace(
-                      /\s+/g,
-                      ""
-                    )}.png`;
 
                     return (
                       <div
