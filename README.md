@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Riot API Player Information Website
 
-## Getting Started
+A Next.js web application that displays League of Legends player information including match history, champion mastery, ranked statistics, and detailed match analytics.
 
-First, run the development server:
+## Features
 
+- Search players by Riot ID (username#tagline)
+- Display recent match history with win/loss, champions, teammates, and game details
+- Show champion mastery levels and points
+- Display ranked statistics and champion winrates
+- View detailed match analytics including timeline, items, and performance metrics
+- Browse all League of Legends champions
+- Responsive design with interactive elements
+
+## Tech Stack
+
+- **Frontend**: Next.js 14, React, TypeScript
+- **Styling**: CSS-in-JS (inline styles)
+- **APIs**: Riot Games API, Data Dragon API
+- **Deployment**: Vercel-ready
+
+## Installation
+
+1. Clone the repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd riot-api-app
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Create environment file
+```bash
+cp .env.local.example .env.local
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Add your Riot API key to `.env.local`
+```
+RIOT_API_KEY=your_riot_api_key_here
+```
 
-## Learn More
+5. Run the development server
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+6. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Getting a Riot API Key
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Go to [Riot Developer Portal](https://developer.riotgames.com/)
+2. Create an account and log in
+3. Generate a development API key
+4. Add the key to your `.env.local` file
 
-## Deploy on Vercel
+## Usage
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Enter a player's Riot ID (e.g., "pikachu#001") in the search form
+2. View match history, champion mastery, and ranked statistics
+3. Click on matches to see detailed analytics
+4. Navigate to the Champions page to browse all League champions
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## API Endpoints
+
+- `/api/lol-history` - Fetch match history
+- `/api/lol-player-stats` - Fetch player statistics and mastery
+- `/api/lol-match-details` - Fetch detailed match analytics
